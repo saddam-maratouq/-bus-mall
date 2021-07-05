@@ -51,13 +51,13 @@
     left: 1236px;
     top: 123px;
     word-spacing: 13px;
-    font-size: 10px;
+    font-size: 15px;
   }
 
 
   #result{
     position: relative;
     top: -357px;
-    right: 316px;
+    right: -38px;
     font-size: 20px;
 }

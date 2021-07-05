@@ -61,56 +61,19 @@ function randomIndex() {
 let leftIndex;
 let rightIndex;
 let midelIndex;
-let leftIndex1;
-let rightIndex2;
-let midelIndex3;
+
 function renderRandomImg() {
-    // if(attempts ==  0){
+     do { 
 
-        do { 
-
-            leftIndex = randomIndex();
-            rightIndex = randomIndex();
-            midelIndex =  randomIndex();
-            
-            }
-            while (leftIndex === midelIndex ||  midelIndex === rightIndex || rightIndex===leftIndex)
-                
-        
-    }
-    
-    // if (attempts!= 0) {
-
-    
-
-    // do { 
-
-    // leftIndex = randomIndex();
-    // rightIndex = randomIndex();
-    // midelIndex =  randomIndex();
-    
-    // }
-    // while (leftIndex === midelIndex ||  midelIndex === rightIndex || rightIndex===leftIndex || 
-    //        leftIndex === leftIndex1 || leftIndex === rightIndex2 || leftIndex === midelIndex3 ||
-    //        rightIndex === rightIndex1 || rightIndex === rightIndex2 || rightIndex === midelIndex3||
-    //        midelIndex === midelIndex1 || midelIndex === rightIndex2 || midelIndex === midelIndex3) 
-
-    // }
-        
-        
-        
-    
-        
-    
-    
-    
-    
-    
     leftIndex = randomIndex();
+    rightIndex = randomIndex();
+    midelIndex =  randomIndex();
+    }
+    while (leftIndex === midelIndex ||  midelIndex === rightIndex || rightIndex===leftIndex  ) ;
        
-        leftIndex1 = leftIndex 
-        rightIndex2 = rightIndex
-        midelIndex3 =  midelIndex 
+       
+    
+        
     
 
     leftImgEl.setAttribute('src', malls[leftIndex].img);
@@ -124,7 +87,7 @@ function renderRandomImg() {
     malls[leftIndex].views++;
     malls[rightIndex].views++;
     malls[midelIndex].views++
-// }
+}
 
 renderRandomImg();
 
@@ -132,6 +95,7 @@ renderRandomImg();
 leftImgEl.addEventListener('click', handelClicks);
 rightImgEl.addEventListener('click', handelClicks);
 midelImgEl.addEventListener('click', handelClicks);
+
 
 function handelClicks(event) {
     if (attempts < maxAttempts) {
@@ -156,62 +120,33 @@ function handelClicks(event) {
     } else {   
     
   
-        // let ulEl = document.getElementById('out');
-        // for (let i = 0; i < malls.length; i++) {
-        //     let liEl = document.createElement('li');
-        //     liEl.textContent = `${malls[i].pName} has ${malls[i].votes} votes and ${malls[i].views} views .`
-        //     ulEl.appendChild(liEl);
-
-        //     votess.push(malls[i].votes);    
-        //     viewss.push(malls[i].views);
-        // }
-        // leftImgEl.removeEventListener('click', handelClicks);
-        // rightImgEl.removeEventListener('click', handelClicks);
-        // midelImgEl.removeEventListener('click', handelClicks);
-
-        // chartRender();
-      
-
-     
-    }
-
-    attempts++; 
-
-}
-
-
-   
- 
-
-   let btnEl = document.getElementById ('result')
-
-btnEl.addEventListener('click',outPut);
-
-function outPut  (event) {
-
-    event.preventDefault();
-
-    if(  attempts  == maxAttempts++) {
-
-        // console.log( attempts );
         let ulEl = document.getElementById('out');
         for (let i = 0; i < malls.length; i++) {
             let liEl = document.createElement('li');
             liEl.textContent = `${malls[i].pName} has ${malls[i].votes} votes and ${malls[i].views} views .`
             ulEl.appendChild(liEl);
 
-            // votess.push(malls[i].votes);    
-            // viewss.push(malls[i].views);
-        
+            votess.push(malls[i].votes);    
+            viewss.push(malls[i].views)
+        }
         leftImgEl.removeEventListener('click', handelClicks);
         rightImgEl.removeEventListener('click', handelClicks);
         midelImgEl.removeEventListener('click', handelClicks);
-        
+
+        chartRender();
     }
     
+    attempts++; 
 }
 
+  
 
+
+   
+ 
+
+
+   
 
 
 
@@ -225,28 +160,25 @@ let  myChart = new Chart(ctx, {
         datasets: [{
             label: '# of Votes',
             data: votess , 
-            
             backgroundColor: [
-               
-                'rgba(255, 99, 132, 0.2)',
+                'rgba(255, 99, 132,  1.0)',
                
             ],
             borderColor: [
-                'rgba(255, 99, 132, 1)',
+                'rgba(255, 99, 132,  1.0)',
               
             ],
             borderWidth: 1
         } , 
         {
             label: '# of views',
-            data: viewss , 
+            data:  viewss , 
             backgroundColor: [
-                'rgba(155, 99, 232, 0.2)',
+                'rgba(130, 119, 30, 1.0)',
                
             ],
             borderColor: [
-                'rgba(255, 99, 132, 1)',
-              
+                'rgba(130, 119, 30, 1.0)',
             ],
             borderWidth: 1
         }]  
@@ -262,6 +194,6 @@ let  myChart = new Chart(ctx, {
 });
 }
 
-
+ 
 
 
