@@ -50,14 +50,22 @@
     position: absolute;
     left: 1236px;
     top: 123px;
-    word-spacing: 13px;
-    font-size: 15px;
+    word-spacing: 3px;
+    font-size: 20px;
   }
 
 
   #result{
-    position: relative;
-    top: -357px;
-    right: -38px;
-    font-size: 20px;
-}
+
+
+position: relative;
+top: -27px;
+left: 30px;
+
+font-size: 20px;
+
+
+  }
+
+
+  
