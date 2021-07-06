@@ -1,6 +1,3 @@
-
-
-
 'use strict';
 let attemptsEl = document.getElementById('attempts');
 let containerEl = document.getElementById('container');
@@ -10,7 +7,7 @@ let rightImgEl = document.getElementById('rightImg');
 let ulEl = document.getElementById('out');
  BusImg.malls = [];
 let attempts = 1;
-let maxAttempts = 25;
+let maxAttempts = 10;
 let productNames =[];
 let votess = [];
 let viewss = [];
@@ -152,8 +149,7 @@ function handelClicks(event) {
  
 function fclick(event){   
 
-                 if( maxAttempts = attempts  ) {
-            //    liEl.textContent=
+                 if( maxAttempts <= attempts ) {
         let ulEl = document.getElementById('out');
         for (let i = 0; i < BusImg.malls.length; i++) {
             let liEl = document.createElement('li');
@@ -168,21 +164,23 @@ function fclick(event){
         midelImgEl.removeEventListener('click', handelClicks);
 
         chartRender();
-
+        
+        
     }
-   
+    
+    
 }
-    // saveLocalsto();
-   
-  
+// saveLocalsto();
+
+
 }
 attempts++; 
 
 }
-  
 
 
-   
+
+
 
    
 
@@ -231,34 +229,3 @@ let  myChart = new Chart(ctx, {
     }
 });
 }
-// readLocalsto();
-          
- 
-////////////////////////////////////// the loacal step 
-
-// function saveLocalsto() {
-    
-//     let data = JSON.stringify (BusImg.malls);
-   
-//     localStorage.setItem('mall',data)
-//     // console.log(BusImg.malls); 
-
-// }
-
-// function readLocalsto() {
-
-//     let strObj = localStorage.getItem('mall')
-    
-//     let normalObj = JSON.parse(strObj)
-
-//    BusImg.malls = normalObj 
-   
-//    handelClicks();
-
-// chartRender();
-  
-// }
-
-
-
-
