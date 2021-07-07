@@ -162,7 +162,7 @@ function fclick(event){
         leftImgEl.removeEventListener('click', handelClicks);
         rightImgEl.removeEventListener('click', handelClicks);
         midelImgEl.removeEventListener('click', handelClicks);
-
+        btnEl.removeEventListener('click',fclick)
         chartRender();
         
         
