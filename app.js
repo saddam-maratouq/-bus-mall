@@ -7,7 +7,7 @@ let rightImgEl = document.getElementById('rightImg');
 let ulEl = document.getElementById('out');
  BusImg.malls = [];
 let attempts = 1;
-let maxAttempts = 10;
+let maxAttempts = 25; 
 let productNames =[];
 let votess = [];
 let viewss = [];
@@ -228,4 +228,7 @@ let  myChart = new Chart(ctx, {
         }
     }
 });
-}
+}  
+
+
+//////////////////////////////////// Done /////////////////////////////
