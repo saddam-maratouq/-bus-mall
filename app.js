@@ -7,7 +7,7 @@ let rightImgEl = document.getElementById('rightImg');
 let ulEl = document.getElementById('out');
  BusImg.malls = [];
 let attempts = 1;
-let maxAttempts = 10;
+let maxAttempts = 25; 
 let productNames =[];
 let votess = [];
 let viewss = [];
@@ -24,7 +24,6 @@ function BusImg(prouductName) {
     // saveLocalsto();
     
 }
-  
 
 
 
@@ -135,7 +134,7 @@ function handelClicks(event) {
 
         else if( clickedImg === 'rightImg'){
 
-            BusImg.malls[rightIndex].votes++;
+            BusImg.malls[rightIndex].votes++
         }
 
     
@@ -163,9 +162,7 @@ function fclick(event){
         leftImgEl.removeEventListener('click', handelClicks);
         rightImgEl.removeEventListener('click', handelClicks);
         midelImgEl.removeEventListener('click', handelClicks);
-         
-        saveLocalsto(); 
-        
+
         chartRender();
         
         
@@ -231,37 +228,7 @@ let  myChart = new Chart(ctx, {
         }
     }
 });
-}
-
-readLocalsto();  
+}  
 
 
-// /////////////////////////////////// local step
-function saveLocalsto() {
-
-        let data = JSON.stringify (BusImg.malls);
-    
-        localStorage.setItem('mall',data)
-        
-    
-    }
-    
-    function readLocalsto() {
-    
-        let strObj = localStorage.getItem('mall')
-    
-        let normalObj = JSON.parse(strObj)
-    
-       BusImg.malls = normalObj 
-    
-     if( normalObj != null){
-
-        for (let i = 0;   i <  normalObj.length ; i++) {
-            
-            BusImg.malls[i].votes = normalObj[i];
-
-            BusImg.malls[i].views = normalObj[i];
-
-        }
-     }
-    }
+//////////////////////////////////// Done /////////////////////////////
