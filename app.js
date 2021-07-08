@@ -164,8 +164,7 @@ function fclick(event){
         rightImgEl.removeEventListener('click', handelClicks);
         midelImgEl.removeEventListener('click', handelClicks);
         btnEl.removeEventListener('click',fclick)
-        
-saveLocalsto();
+        saveLocalsto();
           
         chartRender();
 
@@ -235,7 +234,10 @@ let  myChart = new Chart(ctx, {
 }  
 
 
-//////////////////////////////////// Done /////////////////////////////  
+     
+
+
+//////////////////////////////////// Done ////////////////////////////////////////
 
 
 
@@ -264,5 +266,16 @@ function readLocalsto() {
  }
 }
 
-readLocalsto();
+    readLocalsto();
+
+
+
+
+
+
+
+
+
+
+
 

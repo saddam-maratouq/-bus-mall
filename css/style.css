@@ -104,7 +104,7 @@ font-size: 40px;
   body{
 
     animation-name:changebackground ;
-    animation-duration:  15s ;
+    animation-duration:  5s ;
     animation-iteration-count: infinite ;
   }
 
@@ -115,7 +115,7 @@ font-size: 40px;
         background-color:#FFC107
     }
     50%{
-        background-color:#9BF4D5
+        background-color:#39A2DB
     }
     
         
