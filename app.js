@@ -21,7 +21,7 @@ function BusImg(prouductName) {
     this.views = 0;
     productNames.push(this.pName);
     BusImg.malls.push(this);
-    // saveLocalsto();
+    
     
 }
 
@@ -149,6 +149,7 @@ function handelClicks(event) {
  
 function fclick(event){   
 
+           ulEl.textContent='';
                  if( maxAttempts <= attempts ) {
         let ulEl = document.getElementById('out');
         for (let i = 0; i < BusImg.malls.length; i++) {
@@ -163,14 +164,19 @@ function fclick(event){
         rightImgEl.removeEventListener('click', handelClicks);
         midelImgEl.removeEventListener('click', handelClicks);
         btnEl.removeEventListener('click',fclick)
+
+        saveLocalsto();
+          
+
+
         chartRender();
+
         
         
     }
     
     
 }
-// saveLocalsto();
 
 
 }
@@ -231,4 +237,54 @@ let  myChart = new Chart(ctx, {
 }  
 
 
+
+     
+
+
+//////////////////////////////////// Done ////////////////////////////////////////
+
+
+
+function saveLocalsto() {
+
+    let data = JSON.stringify (BusImg.malls);
+
+    localStorage.setItem('mall',data)
+    
+
+}
+
+function readLocalsto() {
+
+    let strObj = localStorage.getItem('mall')
+
+    let normalObj = JSON.parse(strObj)
+
+
+ if( normalObj !== null){
+   
+     BusImg.malls = normalObj  
+
+
+    
+ }
+}
+
+    readLocalsto();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //////////////////////////////////// Done /////////////////////////////
+
