@@ -1,15 +1,35 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap'); 
+
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Yellowtail&display=swap');
+
+
+
 * {
     box-sizing: border-box;
   }
   h1 {
     text-align: center;
-    font-size: 50px; 
+    font-size: 120px; 
+    font-family: 'Dancing Script', cursive;
+font-family: 'Yellowtail', cursive;
+    background-color: #9CADA4
+
   }
 
   #firstw{
+
       font-size: 30px;
       position: relative;
-      top: 33px; 
+      top: 40px;
+font-family: 'Otomanopee One', sans-serif;  
+      color: white;
+    font-size: 40px;
+
+
+
+
 
   } 
 
@@ -28,14 +48,13 @@
     margin: 0 auto;
     height: 175px;
   }
+
   #leftImg,
   #rightImg
   #midelImg {
-    width: 400px;
+    width: 300px;
     margin: 10px;
-    /* display: block; */
-    /* margin: 0 auto; */
-    border-radius: 10px;
+    border-radius: 30px;
   }
   span {
     margin-left: 50px;
@@ -48,24 +67,57 @@
   #out{
 
     position: absolute;
-    left: 1236px;
-    top: 123px;
+    left: 1381px;
+    top: 302px;
     word-spacing: 3px;
-    font-size: 20px;
+    font-size: 30px;
   }
+
+
+
 
 
   #result{
 
 
 position: relative;
-top: -27px;
+top: 40px; 
 left: 30px;
+font-size: 40px;
 
-font-size: 20px;
 
 
   }
 
 
-  
+  #mychart{
+
+    position: relative;
+    top: 20px;
+  }
+
+  main{
+
+    background-color: gray;
+  }
+
+  body{
+
+    animation-name:changebackground ;
+    animation-duration:  15s ;
+    animation-iteration-count: infinite ;
+  }
+
+
+  @keyframes changebackground{
+    
+    25%{
+        background-color:#FFC107
+    }
+    50%{
+        background-color:#9BF4D5
+    }
+    
+        
+    
+}

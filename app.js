@@ -7,7 +7,7 @@ let rightImgEl = document.getElementById('rightImg');
 let ulEl = document.getElementById('out');
  BusImg.malls = [];
 let attempts = 1;
-let maxAttempts = 10;
+let maxAttempts = 25; 
 let productNames =[];
 let votess = [];
 let viewss = [];
@@ -21,10 +21,9 @@ function BusImg(prouductName) {
     this.views = 0;
     productNames.push(this.pName);
     BusImg.malls.push(this);
-    // saveLocalsto();
+    
     
 }
-  
 
 
 
@@ -135,7 +134,7 @@ function handelClicks(event) {
 
         else if( clickedImg === 'rightImg'){
 
-            BusImg.malls[rightIndex].votes++;
+            BusImg.malls[rightIndex].votes++
         }
 
     
@@ -150,6 +149,7 @@ function handelClicks(event) {
  
 function fclick(event){   
 
+           ulEl.textContent='';
                  if( maxAttempts <= attempts ) {
         let ulEl = document.getElementById('out');
         for (let i = 0; i < BusImg.malls.length; i++) {
@@ -163,17 +163,18 @@ function fclick(event){
         leftImgEl.removeEventListener('click', handelClicks);
         rightImgEl.removeEventListener('click', handelClicks);
         midelImgEl.removeEventListener('click', handelClicks);
-         
-        saveLocalsto(); 
+        btnEl.removeEventListener('click',fclick)
         
+saveLocalsto();
+          
         chartRender();
+
         
         
     }
     
     
 }
-// saveLocalsto();
 
 
 }
@@ -231,37 +232,37 @@ let  myChart = new Chart(ctx, {
         }
     }
 });
-}
-
-readLocalsto();  
+}  
 
 
-// /////////////////////////////////// local step
+//////////////////////////////////// Done /////////////////////////////  
+
+
+
 function saveLocalsto() {
 
-        let data = JSON.stringify (BusImg.malls);
-    
-        localStorage.setItem('mall',data)
-        
-    
-    }
-    
-    function readLocalsto() {
-    
-        let strObj = localStorage.getItem('mall')
-    
-        let normalObj = JSON.parse(strObj)
-    
-       BusImg.malls = normalObj 
-    
-     if( normalObj != null){
+    let data = JSON.stringify (BusImg.malls);
 
-        for (let i = 0;   i <  normalObj.length ; i++) {
-            
-            BusImg.malls[i].votes = normalObj[i];
+    localStorage.setItem('mall',data)
+    
 
-            BusImg.malls[i].views = normalObj[i];
+}
 
-        }
-     }
-    }
+function readLocalsto() {
+
+    let strObj = localStorage.getItem('mall')
+
+    let normalObj = JSON.parse(strObj)
+
+
+ if( normalObj !== null){
+   
+     BusImg.malls = normalObj  
+
+
+    
+ }
+}
+
+readLocalsto();
+
