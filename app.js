@@ -112,6 +112,9 @@ midelImgEl.addEventListener('click', handelClicks);
 
 
 
+
+
+
     
 
 
@@ -271,6 +274,9 @@ function readLocalsto() {
 }
 
     readLocalsto();
+
+
+    
 
 
 
